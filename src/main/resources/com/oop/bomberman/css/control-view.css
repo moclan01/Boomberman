@@ -1,0 +1,26 @@
+#controlContainer {
+	-fx-background-color: #282a36;
+	
+}
+#closeButton{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+	-fx-background-color: #9ca3cd;
+}
+#closeButton:hover{
+	-fx-background-color: #ffffff;
+	-fx-border-color:#e4ea3a;
+}
+#Hboxcontainer{
+	-fx-background-color: #282a36;
+}
+#BorderPaneContainer{
+	-fx-background-color: #282a36;
+}
+#GridContainer{
+	-fx-background-color: #282a36;
+}
+#VboxContainer{
+	-fx-background-color: #282a36;
+}
+

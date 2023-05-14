@@ -1,0 +1,11 @@
+#mainmenuButton {
+    -fx-text-fill:#6c73ee;
+    -fx-background-color: transparent;
+    -fx-padding: 3 0;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+#mainmenuButton:hover {
+    -fx-text-fill:#c30f2a;
+}

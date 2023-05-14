@@ -1,5 +1,6 @@
-package com.oop.bomberman;
+package com.oop.bomberman.test;
 
+import com.oop.bomberman.Bomberman;
 import com.oop.bomberman.controller.PlayerController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Bomberman extends Application {
+public class ControlViewApplication extends Application {
+
     private static Scene scene;
 
     public static Scene getScene() {
@@ -18,7 +20,7 @@ public class Bomberman extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Bomberman.class.getResource("FXML/menu-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Bomberman.class.getResource("FXML/control-view.fxml"));
         AnchorPane root = fxmlLoader.load();
 
         scene = new Scene(root);

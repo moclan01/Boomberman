@@ -9,4 +9,6 @@ module com.oop.bomberman {
     opens com.oop.bomberman.model to javafx.fxml;
     exports com.oop.bomberman.controller;
     opens com.oop.bomberman.controller to javafx.fxml;
+    exports com.oop.bomberman.test;
+    opens com.oop.bomberman.test to javafx.fxml;
 }

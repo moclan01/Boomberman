@@ -1,6 +1,6 @@
 package com.oop.bomberman.model.enity;
 
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
 
@@ -20,13 +20,7 @@ public abstract class AnimatedEntity extends Entity {
     private boolean removed;
     private int frame = 0;
 
-    /**
-     * Initialize object.
-     *
-     * @param x       coordinate x
-     * @param y       coordinate y
-     * @param spawned spawned
-     */
+
     public AnimatedEntity(double x, double y, boolean spawned) {
         super(x, y, spawned);
         spritesList = new ArrayList<>();

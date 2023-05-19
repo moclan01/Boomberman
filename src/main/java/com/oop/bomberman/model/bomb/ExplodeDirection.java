@@ -11,8 +11,10 @@ import com.oop.bomberman.model.materials.Brick;
 import com.oop.bomberman.model.materials.Portal;
 import com.oop.bomberman.model.materials.Wall;
 import com.oop.bomberman.model.powerups.PowerUp;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 import javafx.animation.PauseTransition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -22,12 +24,6 @@ public class ExplodeDirection extends AnimatedEntity {
     private boolean flag;
     private boolean flag2;
 
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     */
     public ExplodeDirection(double x, double y, int direction) {
         super(x, y, true);
         this.direction = direction;
@@ -75,7 +71,12 @@ public class ExplodeDirection extends AnimatedEntity {
         spritesList.add(downLast);
 
         PauseTransition disappear = new PauseTransition(Duration.millis(500));
-        disappear.setOnFinished(event -> toRemove.add(this));
+        disappear.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                toRemove.add(ExplodeDirection.this);
+            }
+        });
         disappear.play();
 
         update();

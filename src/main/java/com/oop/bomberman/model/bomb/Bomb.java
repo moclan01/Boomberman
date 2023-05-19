@@ -1,7 +1,7 @@
 package com.oop.bomberman.model.bomb;
 
 import com.oop.bomberman.model.enity.AnimatedEntity;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
 
@@ -12,12 +12,6 @@ public class Bomb extends AnimatedEntity {
     private static int bombCount;
     private boolean passedBomb;
 
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     */
     public Bomb(double x, double y, boolean increaseRadius) {
         super(x, y, true);
         direction = 0;

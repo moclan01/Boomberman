@@ -1,17 +1,12 @@
 package com.oop.bomberman.model.materials;
 
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Brick extends AnimatedTile {
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     */
+
     public Brick(double x, double y) {
         super(x, y, false);
 

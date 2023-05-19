@@ -2,9 +2,7 @@ package com.oop.bomberman.model;
 
 import com.oop.bomberman.model.enity.Entity;
 import com.oop.bomberman.model.enemies.Enemy;
-import com.oop.bomberman.model.Player;
 import com.oop.bomberman.model.materials.Wall;
-import com.oop.bomberman.model.graphics.Banner;
 import com.oop.bomberman.model.level.Level;
 import javafx.animation.AnimationTimer;
 

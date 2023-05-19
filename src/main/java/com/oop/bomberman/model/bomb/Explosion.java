@@ -1,15 +1,9 @@
 package com.oop.bomberman.model.bomb;
 
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 public class Explosion {
 
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     */
     public Explosion(double x, double y, boolean increaseRadius) {
         int tileSize = Sprite.getScaledSize();
 

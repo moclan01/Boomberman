@@ -1,19 +1,14 @@
 package com.oop.bomberman.model.powerups;
 
 import com.oop.bomberman.model.Player;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 import javafx.application.Platform;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Bombpass extends PowerUp {
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     */
+
     public Bombpass(double x, double y) {
         super(x, y);
         spritesList.add(Sprite.powerup_bombpass);

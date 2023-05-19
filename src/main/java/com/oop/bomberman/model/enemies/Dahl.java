@@ -1,18 +1,13 @@
 package com.oop.bomberman.model.enemies;
 
 import com.oop.bomberman.model.AI.LowAI;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Dahl extends Enemy {
-    /**
-     * Initialize object.
-     *
-     * @param x       coordinate x
-     * @param y       coordinate y
-     */
+
     public Dahl(double x, double y) {
         super(x, y, 400, false);
         speed = 1.8;

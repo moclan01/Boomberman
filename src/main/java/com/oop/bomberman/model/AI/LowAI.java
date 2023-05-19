@@ -1,6 +1,6 @@
 package com.oop.bomberman.model.AI;
 
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 public class LowAI extends AI {
     private int steps;

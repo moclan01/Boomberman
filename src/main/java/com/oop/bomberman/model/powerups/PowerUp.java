@@ -9,12 +9,7 @@ public abstract class PowerUp extends Tile {
     protected boolean canActivate;
     protected boolean active;
 
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     */
+
     public PowerUp(double x, double y) {
         super(x, y);
         new Brick(x, y);

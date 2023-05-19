@@ -1,7 +1,7 @@
 package com.oop.bomberman.controller;
 
 import com.oop.bomberman.model.Game;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

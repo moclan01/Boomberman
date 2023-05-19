@@ -1,6 +1,6 @@
 package com.oop.bomberman.model.enity;
 
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,12 +8,7 @@ import java.util.List;
 public abstract class Tile extends Entity {
     protected final List<Sprite> spritesList;
 
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     */
+
     public Tile(double x, double y) {
         super(x, y, false);
         spritesList = new ArrayList<>();

@@ -2,7 +2,7 @@ package com.oop.bomberman.model.enity;
 
 import com.oop.bomberman.controller.BombermanController;
 import com.oop.bomberman.model.bomb.ExplodeDirection;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
@@ -17,13 +17,7 @@ public abstract class Entity {
     protected int spriteIndex = 0 ;
     protected final GraphicsContext gc;
 
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     * @param spawned    spawned
-     */
+
     public Entity(double x, double y, boolean spawned) {
         this.gc = BombermanController.getGraphicContext();
         if (!spawned) {

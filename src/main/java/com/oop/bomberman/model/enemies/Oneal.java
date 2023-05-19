@@ -2,19 +2,14 @@ package com.oop.bomberman.model.enemies;
 
 import com.oop.bomberman.model.AI.MediumAI;
 import com.oop.bomberman.model.Player;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Oneal extends Enemy {
 
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     */
+
     public Oneal(double x, double y, Player player) {
         super(x, y, 200, false);
         speed = 2;

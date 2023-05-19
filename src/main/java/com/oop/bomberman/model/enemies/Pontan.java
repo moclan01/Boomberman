@@ -2,18 +2,13 @@ package com.oop.bomberman.model.enemies;
 
 import com.oop.bomberman.model.AI.MediumAI;
 import com.oop.bomberman.model.Player;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pontan extends Enemy {
-    /**
-     * Initialize object.
-     *
-     * @param x       coordinate x
-     * @param y       coordinate y
-     */
+
     public Pontan(double x, double y, Player player) {
         super(x, y, 8000, false);
         speed = 3;

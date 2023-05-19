@@ -12,7 +12,7 @@ import com.oop.bomberman.model.materials.Brick;
 import com.oop.bomberman.model.materials.Portal;
 import com.oop.bomberman.model.enity.Tile;
 import com.oop.bomberman.model.powerups.PowerUp;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 import com.oop.bomberman.model.level.Level;
 import javafx.animation.PauseTransition;
 import javafx.beans.binding.Bindings;

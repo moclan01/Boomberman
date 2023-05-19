@@ -7,20 +7,14 @@ import com.oop.bomberman.model.Player;
 import com.oop.bomberman.model.materials.Brick;
 import com.oop.bomberman.model.enity.Tile;
 import com.oop.bomberman.model.powerups.PowerUp;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 public abstract class Enemy extends AnimatedEntity {
     protected AI ai;
     private final int point;
     protected boolean wallpass;
 
-    /**
-     * Initialize object.
-     *
-     * @param x coordinate x
-     * @param y coordinate y
-     * @param spawned    spawned
-     */
+
     public Enemy(double x, double y, int point, boolean spawned) {
         super(x, y, spawned);
         this.point = point;

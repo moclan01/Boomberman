@@ -1,7 +1,7 @@
 package com.oop.bomberman.model.enemies;
 
 import com.oop.bomberman.model.AI.LowAI;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
 
@@ -10,12 +10,7 @@ import java.util.List;
 
 public class Tiger extends Enemy {
     private boolean spawned;
-    /**
-     * Initialize object.
-     *
-     * @param x       coordinate x
-     * @param y       coordinate y
-     */
+
     public Tiger(double x, double y) {
         super(x, y, 200, false);
         ai = new LowAI(3);

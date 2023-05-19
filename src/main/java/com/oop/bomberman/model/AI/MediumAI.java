@@ -2,7 +2,7 @@ package com.oop.bomberman.model.AI;
 
 import com.oop.bomberman.model.enemies.Enemy;
 import com.oop.bomberman.model.Player;
-import com.oop.bomberman.model.graphics.Sprite;
+import com.oop.bomberman.model.sprite.Sprite;
 
 public class MediumAI extends AI {
     private final Player player;

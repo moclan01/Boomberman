@@ -13,7 +13,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Level {
+
     private final AnimationTimer animation;
     private final FileLevel fileLevel;
     private int currentLevel;
@@ -58,22 +62,46 @@ public class Level {
     private void transition() {
         Entity.entityList.clear();
 
-        gc.setFill(Color.BLACK);
-        gc.fillRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
-        gc.setFont(new Font(100));
-
-        gc.setFill(Color.WHITE);
-        gc.fillText("Level " + currentLevel , Level.x.get() + 250, 325);
-        gc.setFont(new Font(12));
+//        gc.setFill(Color.BLACK);
+//        gc.fillRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+//        gc.setFont(new Font(100));
+//
+//        gc.setFill(Color.WHITE);
+//        gc.fillText("Level " + currentLevel , Level.x.get() + 250, 325);
+//        gc.setFont(new Font(12));
 
         animation.stop();
 
-        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
+        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(0));
         pauseTransition.setOnFinished(event -> {
-            gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+//            gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
             fileLevel.createEntities();
             animation.start();
         });
         pauseTransition.play();
+    }
+//    @Override
+//    public void registerObserver(LevelObserver levelObserver) {
+//        this.levelObserverList.add(levelObserver);
+//    }
+//
+//    @Override
+//    public void unRegisterObserver(LevelObserver levelObserver) {
+//        this.levelObserverList.remove(levelObserver);
+//    }
+//
+//    @Override
+//    public void notifyObserver() {
+//        for (LevelObserver levelObserver : levelObserverList) {
+//            levelObserver.updateLevelObserver();
+//        }
+//    }
+
+    public int getCurrentLevel() {
+        return currentLevel;
+    }
+
+    public FileLevel getFileLevel() {
+        return fileLevel;
     }
 }

@@ -13,19 +13,23 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class Banner {
-    private final GraphicsContext gc;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Banner implements BannerSubject {
+    private List<BannerObserver> observerList = new ArrayList<>();
     private final Timeline timeline;
     private final IntegerProperty timeSeconds;
+    private int point;
+    private int timer;
+    private int life;
 
     public Banner() {
-        gc = BombermanController.getGcBanner();
-        gc.setFill(Color.WHITE);
-        gc.setTextBaseline(VPos.CENTER);
 
         timeSeconds = new SimpleIntegerProperty();
         timeline = new Timeline();
         startTimer();
+        notifyObservers();
     }
 
     public boolean timeUp() {
@@ -42,9 +46,32 @@ public class Banner {
     }
 
     public void update() {
-        gc.clearRect(0, 0, 800, 34);
-        gc.fillText("Score: " + Game.getTotalPoints(), 10, 15);
-        gc.fillText("Timer: " + timeSeconds.get(), 100, 15);
-        gc.fillText("Life: " + Player.getLife(), 200, 15);
+
+//        gc.fillText("Score: " + Game.getTotalPoints(), 10, 15);
+//        gc.fillText("Timer: " + timeSeconds.get(), 100, 15);
+//        gc.fillText("Life: " + Player.getLife(), 200, 15);
+        this.point = Game.getTotalPoints();
+        this.timer = timeSeconds.get();
+        this.life = Player.getLife();
+
+        notifyObservers();
+    }
+
+    @Override
+    public void registerObserver(BannerObserver bannerObserver) {
+        this.observerList.add(bannerObserver);
+    }
+
+    @Override
+    public void unregisterObserver(BannerObserver bannerObserver) {
+        this.observerList.remove(bannerObserver);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (BannerObserver bannerObserver : this.observerList
+             ) {
+            bannerObserver.updateBannerObserver(this.point, this.timer, this.life);
+        }
     }
 }

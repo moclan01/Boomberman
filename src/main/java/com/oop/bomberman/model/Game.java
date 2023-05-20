@@ -6,12 +6,17 @@ import com.oop.bomberman.model.materials.Wall;
 import com.oop.bomberman.model.level.Level;
 import javafx.animation.AnimationTimer;
 
+
 public class Game {
+
     private Level level;
     private boolean passedLevel;
     private boolean playerDead = false;
     private static int totalPoints;
     private boolean gimmickStarted;
+
+    private Banner banner;
+    private AnimationTimer animation;
 
     public static int getTotalPoints() {
         return totalPoints;
@@ -26,9 +31,9 @@ public class Game {
     }
 
     public void start() {
-        Banner banner = new Banner();
+        banner = new Banner();
 
-        AnimationTimer animation = new AnimationTimer() {
+        animation = new AnimationTimer() {
             @Override
             public void handle(long now) {
                 banner.update();
@@ -71,4 +76,16 @@ public class Game {
         level = new Level(animation);
         level.newGame();
     }
+
+
+    public Banner getBanner() {
+        return banner;
+    }
+     public Level getLevel(){
+        return level;
+     }
+
+     public AnimationTimer getAnimation() {
+        return animation;
+     }
 }

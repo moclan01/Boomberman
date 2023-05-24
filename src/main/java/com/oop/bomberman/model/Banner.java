@@ -37,7 +37,7 @@ public class Banner implements BannerSubject {
     }
 
     public void startTimer() {
-        int time = 200;
+        int time = 1000;
         timeSeconds.set(time);
 
         timeline.getKeyFrames().clear();
@@ -46,13 +46,10 @@ public class Banner implements BannerSubject {
     }
 
     public void update() {
-
-//        gc.fillText("Score: " + Game.getTotalPoints(), 10, 15);
-//        gc.fillText("Timer: " + timeSeconds.get(), 100, 15);
-//        gc.fillText("Life: " + Player.getLife(), 200, 15);
         this.point = Game.getTotalPoints();
         this.timer = timeSeconds.get();
         this.life = Player.getLife();
+        System.out.println(Player.getLife());
 
         notifyObservers();
     }
@@ -69,8 +66,7 @@ public class Banner implements BannerSubject {
 
     @Override
     public void notifyObservers() {
-        for (BannerObserver bannerObserver : this.observerList
-             ) {
+        for (BannerObserver bannerObserver : this.observerList) {
             bannerObserver.updateBannerObserver(this.point, this.timer, this.life);
         }
     }

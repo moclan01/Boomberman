@@ -12,9 +12,10 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class BombermanController implements BannerObserver {
+public class BombermanController implements BannerObserver,GameObserver {
     @FXML
     private Canvas canvas;
     @FXML
@@ -43,8 +44,9 @@ public class BombermanController implements BannerObserver {
     private Level level;
 
 
-    public void registerSubject(BannerSubject bannerSubject) {
+    public void registerSubject(BannerSubject bannerSubject,GameSubject gameSubject) {
         bannerSubject.registerObserver(this);
+        gameSubject.registerObserver(this);
     }
 
     @FXML
@@ -71,7 +73,8 @@ public class BombermanController implements BannerObserver {
         bannerSubject = game.getBanner();
         level = game.getLevel();
 
-        this.registerSubject(bannerSubject);
+
+        this.registerSubject(bannerSubject,game);
     }
 
     public void displayPoint(int point) {
@@ -102,4 +105,12 @@ public class BombermanController implements BannerObserver {
         displayLife(life);
     }
 
+    @Override
+    public void updateGameObserver() {
+        Stage gameStage = (Stage) banner.getScene().getWindow();
+        gameStage.close();
+
+        GameOverController gameOverController = new GameOverController();
+        gameOverController.startGameOver();
+    }
 }

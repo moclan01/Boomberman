@@ -6,9 +6,12 @@ import com.oop.bomberman.model.materials.Wall;
 import com.oop.bomberman.model.level.Level;
 import javafx.animation.AnimationTimer;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class Game {
 
+public class Game implements GameSubject{
+    private List<GameObserver> gameObserverList = new ArrayList<>();
     private Level level;
     private boolean passedLevel;
     private boolean playerDead = false;
@@ -54,6 +57,7 @@ public class Game {
                 if (banner.timeUp() && !gimmickStarted) {
                     level.startGimmick();
                     gimmickStarted = true;
+                    notifyObservers();
                 } else if (!banner.timeUp()) {
                     gimmickStarted = false;
                 }
@@ -64,8 +68,9 @@ public class Game {
                 if(playerDead) {
                     Player.decreaseLife();
                     if (Player.getLife() == 0) {
-                        level.newGame();
-                        banner.startTimer();
+//                        level.newGame();
+//                        banner.startTimer();
+                        notifyObservers();
                     } else {
                         level.restartLevel();
                     }
@@ -88,4 +93,21 @@ public class Game {
      public AnimationTimer getAnimation() {
         return animation;
      }
+
+    @Override
+    public void registerObserver(GameObserver gameObserver) {
+        this.gameObserverList.add(gameObserver);
+    }
+
+    @Override
+    public void unregisterObserver(GameObserver gameObserver) {
+        this.gameObserverList.remove(gameObserver);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for(GameObserver gameObserver : gameObserverList){
+            gameObserver.updateGameObserver();
+        }
+    }
 }

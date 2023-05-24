@@ -1,0 +1,11 @@
+#exitButton {
+    -fx-text-fill:#6c73ee;
+    -fx-background-color: transparent;
+    -fx-padding: 3 0;
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+
+#exitButton:hover {
+    -fx-text-fill:#ffffff;
+}

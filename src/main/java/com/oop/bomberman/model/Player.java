@@ -18,6 +18,8 @@ import javafx.animation.PauseTransition;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -30,7 +32,7 @@ public class Player extends AnimatedEntity {
     private Rectangle clip;
     private final DoubleProperty xProperty;
     private int maxBombs;
-    private static int life = 3;
+    private static int life = 4;
     private static boolean activatePortal;
     private boolean increaseRadius;
     private boolean wallpass;
@@ -89,7 +91,7 @@ public class Player extends AnimatedEntity {
     }
 
     public static void resetLife() {
-        life = 3;
+        life = 4;
     }
 
     public static void decreaseLife() {
@@ -135,7 +137,12 @@ public class Player extends AnimatedEntity {
     public void increaseSpeed() {
         ++speed;
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(20));
-        pauseTransition.setOnFinished(event -> --speed);
+        pauseTransition.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                --speed;
+            }
+        });
         pauseTransition.play();
     }
 
@@ -229,4 +236,6 @@ public class Player extends AnimatedEntity {
         }
         super.update();
     }
+
+
 }

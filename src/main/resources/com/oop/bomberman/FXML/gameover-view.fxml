@@ -2,28 +2,30 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.bomberman.controller.GameOverController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.bomberman.controller.GameOverController">
    <children>
-      <Pane layoutX="69.0" layoutY="293.0" prefHeight="79.0" prefWidth="442.0">
-         <children>
-            <Button fx:id="exitButton" layoutX="318.0" layoutY="14.0" mnemonicParsing="false" onAction="#ExitGame" prefHeight="51.0" prefWidth="110.0" text="Exit" />
-            <Button fx:id="menuButton" layoutX="34.0" layoutY="27.0" mnemonicParsing="false" onAction="#MenuStage" prefHeight="37.0" prefWidth="95.0" text="Menu" />
-         </children>
-      </Pane>
-      <VBox layoutX="62.0" layoutY="14.0" prefHeight="106.0" prefWidth="435.0">
-         <children>
-            <Label prefHeight="104.0" prefWidth="412.0" text="Game over">
-               <font>
-                  <Font size="71.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
+      <ImageView fitHeight="607.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../textures/gameover.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="62.0" layoutY="14.0" prefHeight="106.0" prefWidth="435.0" />
+      <Button id="exitButton" fx:id="exitButton" layoutX="62.0" layoutY="506.0" mnemonicParsing="false" onAction="#ExitGame" prefHeight="51.0" prefWidth="110.0" stylesheets="@../css/gameover.css" text="Exit" />
+      <Label layoutX="172.0" layoutY="67.0" prefHeight="154.0" prefWidth="270.0" text="Game" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="96.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="223.0" prefHeight="154.0" prefWidth="270.0" text="over" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="96.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

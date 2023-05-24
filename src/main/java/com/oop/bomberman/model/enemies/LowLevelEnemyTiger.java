@@ -8,10 +8,10 @@ import javafx.util.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tiger extends Enemy {
+public class LowLevelEnemyTiger extends Enemy {
     private boolean spawned;
 
-    public Tiger(double x, double y) {
+    public LowLevelEnemyTiger(double x, double y) {
         super(x, y, 200, false);
         ai = new LowAI(3);
         speed = 2;
@@ -51,9 +51,9 @@ public class Tiger extends Enemy {
 
             PauseTransition pauseTransition = new PauseTransition(Duration.millis(600));
             pauseTransition.setOnFinished(event -> {
-                toAdd.add(new SpawnedTiger(spawnedX, spawnedY));
-                toAdd.add(new SpawnedTiger(spawnedX + Sprite.getScaledSize(), spawnedY));
-                toAdd.add(new SpawnedTiger(spawnedX - Sprite.getScaledSize(), spawnedY));
+                toAdd.add(new LowLevelEnemySpawnedTiger(spawnedX, spawnedY));
+                toAdd.add(new LowLevelEnemySpawnedTiger(spawnedX + Sprite.getScaledSize(), spawnedY));
+                toAdd.add(new LowLevelEnemySpawnedTiger(spawnedX - Sprite.getScaledSize(), spawnedY));
             });
             pauseTransition.play();
         }

@@ -6,9 +6,9 @@ import com.oop.bomberman.model.sprite.Sprite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Balloom extends Enemy {
+public class LowLevelEnemyBalloom extends Enemy {
 
-    public Balloom(double x, double y) {
+    public LowLevelEnemyBalloom(double x, double y) {
         super(x, y, 100, false);
         ai = new LowAI(5);
         speed = 1;
@@ -37,4 +37,9 @@ public class Balloom extends Enemy {
         spritesList.add(right);
         spritesList.add(dead);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Tao la Balloom";
+//    }
 }

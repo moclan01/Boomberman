@@ -6,9 +6,9 @@ import com.oop.bomberman.model.sprite.Sprite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dahl extends Enemy {
+public class LowLevelEnemyDahl extends Enemy {
 
-    public Dahl(double x, double y) {
+    public LowLevelEnemyDahl(double x, double y) {
         super(x, y, 400, false);
         speed = 1.8;
         ai = new LowAI(6);

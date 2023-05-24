@@ -5,7 +5,7 @@ import com.oop.bomberman.model.enity.Entity;
 import com.oop.bomberman.model.AI.AI;
 import com.oop.bomberman.model.Player;
 import com.oop.bomberman.model.materials.Brick;
-import com.oop.bomberman.model.enity.Tile;
+import com.oop.bomberman.model.materials.Tile;
 import com.oop.bomberman.model.powerups.PowerUp;
 import com.oop.bomberman.model.sprite.Sprite;
 

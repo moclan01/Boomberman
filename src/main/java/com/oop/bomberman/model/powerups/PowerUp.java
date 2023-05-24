@@ -3,7 +3,7 @@ package com.oop.bomberman.model.powerups;
 
 import com.oop.bomberman.model.Player;
 import com.oop.bomberman.model.materials.Brick;
-import com.oop.bomberman.model.enity.Tile;
+import com.oop.bomberman.model.materials.Tile;
 
 public abstract class PowerUp extends Tile {
     protected boolean canActivate;

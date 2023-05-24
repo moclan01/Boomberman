@@ -7,10 +7,10 @@ import com.oop.bomberman.model.sprite.Sprite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Oneal extends Enemy {
+public class MediumLevelEnemyOneal extends Enemy {
 
 
-    public Oneal(double x, double y, Player player) {
+    public MediumLevelEnemyOneal(double x, double y, Player player) {
         super(x, y, 200, false);
         speed = 2;
 

@@ -1,6 +1,5 @@
 package com.oop.bomberman.model.materials;
 
-import com.oop.bomberman.model.enity.Tile;
 import com.oop.bomberman.model.sprite.Sprite;
 
 public class Portal extends Tile {

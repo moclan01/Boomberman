@@ -6,28 +6,28 @@ import com.oop.bomberman.model.sprite.Sprite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ovape extends Enemy {
+public class LowLevelEnemySpawnedTiger extends Enemy {
 
-    public Ovape(double x, double y) {
-        super(x, y, 2000, false);
+
+    public LowLevelEnemySpawnedTiger(double x, double y) {
+        super(x, y, 100, true);
+        ai = new LowAI(1);
         speed = 1;
-        ai = new LowAI(6);
-        wallpass = true;
 
         //Initialize left animation sprites
         List<Sprite> left = new ArrayList<>();
-        left.add(Sprite.ovape_left1);
-        left.add(Sprite.ovape_left2);
-        left.add(Sprite.ovape_left3);
+        left.add(Sprite.tiger_left1);
+        left.add(Sprite.tiger_left2);
+        left.add(Sprite.tiger_left3);
 
         //Initialize right animation sprites
         List<Sprite> right = new ArrayList<>();
-        right.add(Sprite.ovape_right1);
-        right.add(Sprite.ovape_right2);
-        right.add(Sprite.ovape_right3);
+        right.add(Sprite.tiger_right1);
+        right.add(Sprite.tiger_right2);
+        right.add(Sprite.tiger_right3);
 
         List<Sprite> dead = new ArrayList<>();
-        dead.add(Sprite.ovape_dead);
+        dead.add(Sprite.tiger_dead);
         dead.add(Sprite.mob_dead1);
         dead.add(Sprite.mob_dead2);
         dead.add(Sprite.mob_dead3);

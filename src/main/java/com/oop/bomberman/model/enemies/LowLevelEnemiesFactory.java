@@ -20,7 +20,7 @@ public class LowLevelEnemiesFactory implements EmemyFactory {
 
 //    public static void main(String[] args) {
 //        EmemyFactory enemyFactory = new LowLevelEnemiesFactory();
-//        System.out.println(enemyFactory.generateEnemies("Balloom", 10, 2).toString());
+//        System.out.println(enemyFactory.generateEnemies("Balloom", 10, 2, null).toString());
 //
 //
 //

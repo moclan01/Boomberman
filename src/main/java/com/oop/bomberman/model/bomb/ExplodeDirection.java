@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExplodeDirection extends AnimatedEntity {
+    //tạo biến đánh dấu vật thể
     private boolean flag;
     private boolean flag2;
 
@@ -90,6 +91,7 @@ public class ExplodeDirection extends AnimatedEntity {
         return !flag && !flag2;
     }
 
+    //xử lý sự kiện của vùng bom nổ
     public boolean collide(Entity e) {
         if (e instanceof Player && ((Player) e).canPassFlame()) {
             return false;

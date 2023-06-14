@@ -14,9 +14,10 @@ public class Bomb extends AnimatedEntity {
 
     public Bomb(double x, double y, boolean increaseRadius) {
         super(x, y, true);
+        //gán trạng thái khi đặt đặt boom
         direction = 0;
         ++bombCount;
-
+        //thời gian bom nổ
         PauseTransition explode = new PauseTransition(Duration.seconds(2.5));
         explode.setOnFinished(event -> {
             clear();

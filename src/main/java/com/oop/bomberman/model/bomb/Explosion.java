@@ -6,7 +6,7 @@ public class Explosion {
 
     public Explosion(double x, double y, boolean increaseRadius) {
         int tileSize = Sprite.getScaledSize();
-
+        //tọa độ cho các hiệu ứng vùng boom nổ
         new ExplodeDirection(x, y, 0);
         ExplodeDirection left = new ExplodeDirection(x - tileSize, y, 1);
         ExplodeDirection right = new ExplodeDirection(x + tileSize, y, 1);

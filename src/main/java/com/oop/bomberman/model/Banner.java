@@ -49,7 +49,7 @@ public class Banner implements BannerSubject {
         this.point = Game.getTotalPoints();
         this.timer = timeSeconds.get();
         this.life = Player.getLife();
-        System.out.println(Player.getLife());
+//        System.out.println(Player.getLife());
 
         notifyObservers();
     }

@@ -1,5 +1,5 @@
 package com.oop.bomberman.model;
 
 public interface GameObserver {
-    void updateGameObserver();
+    public void updateGameObserver();
 }
